@@ -1,0 +1,13 @@
+import unittest
+from LogIn import PageLocators,LogIn,LogInTest
+
+from Navigation import PageLocators,UserImpersonate,UserTest
+# get all tests from SearchText and HomePageTest class
+log_in = unittest.TestLoader().loadTestsFromTestCase(LogInTest)
+imp_user = unittest.TestLoader().loadTestsFromTestCase(UserTest)
+
+# create a test suite combining search_text and home_page_test
+test_suite = unittest.TestSuite([log_in, imp_user])
+
+# run the suite
+unittest.TextTestRunner(verbosity=2).run(test_suite)
